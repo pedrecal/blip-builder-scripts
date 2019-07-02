@@ -15,7 +15,7 @@ if len(sys.argv) < 2:
     print('uso: python tag_input.py <arquivo>')
     exit(-1)
 
-arquivo_entrada = open(sys.argv[1], 'r')
+arquivo_entrada = open(sys.argv[1], 'r', encoding='utf8')
 fluxo = json.load(arquivo_entrada)
 arquivo_entrada.close()
 
@@ -28,7 +28,7 @@ for bloco in fluxo:
             acao['settings']['body'] = json.dumps(body, indent=4)
 
 nome_saida = '%s TRACKED.json' % (sys.argv[1].split('.')[0])
-arquivo_saida = open(nome_saida, 'w')
+arquivo_saida = open(nome_saida, 'w', encoding='utf8')
 arquivo_saida.write(json.dumps(fluxo))
 arquivo_saida.close()
 
