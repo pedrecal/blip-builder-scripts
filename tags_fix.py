@@ -58,6 +58,12 @@ ACTION_TAG = {
         "label": "ProcessCommand",
         "id": "blip-tag-a691d5d5-f3c4-ef6b-b9c5-614d5de16169",
         "canChangeBackground": False
+    },
+    'UserInput': {
+        'background': '#232d11',
+        'label': 'User Input',
+        'id': 'blip-tag-ba80e21e-7e32-11e9-8f9e-2a86e4085a59',
+        'canChangeBackground': False
     }
 }
 
@@ -76,12 +82,7 @@ for bloco in fluxo:
     except:
         continue
     if not fluxo[bloco]['$contentActions'][-1]['input']['bypass']:
-        fluxo[bloco]['$tags'].append({
-            'background': '#232d11',
-            'label': 'User Input',
-            'id': 'blip-tag-ba80e21e-7e32-11e9-8f9e-2a86e4085a59',
-            'canChangeBackground': False
-        })
+        fluxo[bloco]['$tags'].append(ACTION_TAG['UserInput'])
 
 nome_saida = '%s FIXED.json' % (sys.argv[1].split('.')[0])
 arquivo_saida = open(nome_saida, 'w', encoding='utf8')

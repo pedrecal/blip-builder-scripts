@@ -2,17 +2,27 @@ import sys
 import json
 
 EXTRAS = {
-    'Nome': '{{contact.name}}',
-    'Telefone': '{{contact.phoneNumber}}',
-    'CPF': '{{contact.extras.cpf}}',
-    'Id da Mensagem': '{{input.message@id}}',
-    'Texto digitado': '{{input.content}}',
-    'UserId': '{{contact.identity}}'
+    "userId": "{{contact.identity}}",
+    "originatorMessageId": "{{input.message@id}}",
+    "userEmail": "{{contact.email}}",
+    "userName": "{{contact.name}}",
+    "cnpj": "{{contact.extras.cnpj}}",
+    "segmentName": "{{contact.extras.segmentName}}",
+    "sessionId": "{{sessionId}}",
+    "IdMessage": "{{input.message.id}}",
+    "IdUser": "{{contact.identity}}",
+    "username": "{{contact.extras.username}}",
+    "Shortname": "{{contact.extras.shortname}}",
+    "cpf": "{{contact.extras.cpf}}",
+    "lastState": "{{state.previous.name}}",
+    "score": "{{score}}",
+    "clerk": "{{ticketAgentIdentity}}",
+    "ticketId": "{{ticketId}}",
+    "ticketOpenDatetime": "{{ticketOpenDate}}"
 }
 
-
 if len(sys.argv) < 2:
-    print('uso: python tag_input.py <arquivo>')
+    print('uso: python track_extras.py <arquivo>')
     exit(-1)
 
 arquivo_entrada = open(sys.argv[1], 'r', encoding='utf8')
