@@ -3,10 +3,9 @@ from uuid import uuid4
 
 commands_url = 'https://msging.net/commands'
 
-source_authorization = 'Source key'
+source_authorization = 'src_key'
 destination_authorizations = [
-    'Dest key 1',
-    'Dest key 2'
+    'dest_key'
 ]
 
 

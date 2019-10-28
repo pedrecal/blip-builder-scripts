@@ -1,0 +1,10 @@
+{
+    "members": ["email@take.net"],
+    "bots": [
+        {
+            "identity": "id1",
+            "name": "Name as in portal",
+            "authorization": "auth key"
+        }
+    ]
+}
